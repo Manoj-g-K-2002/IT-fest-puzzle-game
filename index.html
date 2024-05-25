@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Don Bosco Degree College, Chitradurga</title>
+<style>
+    body {
+        margin: 0px;
+        text-align: center;
+        background: linear-gradient(to right, #003366, #66ccff); /* Gradient background */
+        font-family: 'Arial', sans-serif; 
+        color: #fff; 
+    }
+    .college-info {
+        margin: 20px auto; 
+        max-width: 90%; 
+        background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+        padding: 20px; 
+        border-radius: 10px; 
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+        color: #003366; /* Dark blue text color */
+    }
+    .larger-heading {
+        font-size: 40px; 
+        margin: 5px 0; 
+        color: #003366; /* Dark blue text color */
+    }
+    .larger-subheading {
+        font-size: 25px; 
+        margin: 3px 0; 
+        color: #003366; /* Dark blue text color */
+    }
+    .w3-content {
+        height: 80vh; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+    }
+    .mySlides {
+        width: 100%; 
+        max-height: 100%; 
+        position: absolute; 
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+    .mySlides.active {
+        opacity: 1; 
+    }
+    .puzzle-heading {
+        color: #fff; 
+        text-decoration: none; 
+        background-color: #ffcc00; /* Gold button background */
+        padding: 10px 20px; 
+        border-radius: 5px; 
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+        transition: background-color 0.3s, transform 0.3s; 
+    }
+    .puzzle-heading:hover {
+        background-color: #e6b800; /* Darker gold on hover */
+        transform: scale(1.05); 
+    }
+    footer {
+        background-color: #003366;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2); 
+    }
+    .minimized-image {
+    width: 200px; /* Adjust the width as needed */
+    height: auto; /* Keeps the aspect ratio */
+    position: absolute; /* Allows positioning with top and left */
+    top: 25px; /* Adjust the top position */
+    left: 50px; 
+    /* Adjust the left position */
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="college-info">
+    <img src="./images/LOGODB copy.png" alt="College Logo" class="minimized-image">
+
+    <h1 class="larger-heading">Don Bosco Degree College</h1>
+    <h4 class="larger-subheading">[AFFILIATED TO DAVANGERE UNIVERSITY & RECOGNIZED BY GOVT OF KARNATAKA]</h4>
+    <h4 class="larger-subheading">CHITRADURGA- 577501</h4>
+</div>
+<h1><a href="puzzlegame.html" class="puzzle-heading">Puzzle Game</a></h1>
+
+<div class="w3-content w3-display-container">
+    <img class="mySlides active" src="./images/banner_2.jpg" alt="Banner 2">
+    <img class="mySlides" src="./images/WhatsApp-Image-2023-01-18-at-9.56.30-AM.jpeg" alt="WhatsApp Image">
+    <img class="mySlides" src="./images/maxresdefault.jpg" alt="Maxresdefault">
+</div>
+
+<footer>
+    <p>&copy;Don Bosco Degree College </p>
+</footer>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var slides = document.getElementsByClassName("mySlides");
+    for (var i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active"); // Remove active class from all slides
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].classList.add("active"); // Add active class to current slide
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+</script>
+</body>
+</html>

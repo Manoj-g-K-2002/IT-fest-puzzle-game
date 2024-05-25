@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: linear-gradient(to right, #003366, #bfc8cd); /* Gradient background */
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+        }
+
+        .college-info {
+            margin: 20px auto;
+            max-width: 90%;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            color: #003366; /* Dark blue text color */
+            position: relative;
+        }
+
+        .info-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .info-box {
+            max-width: 40%;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 18px; /* Larger text size */
+            margin: 20px; /* Adjusted margin */
+            text-align: left;
+        }
+
+        .bca-info {
+            background-color: rgba(173, 216, 230, 0.9); /* Light blue background specific to BCA */
+            color: #003366; /* Dark blue text color */
+            border: 2px solid #003366; /* Add border */
+            position: absolute; /* Position at top left */
+            top: 250px; /* Adjusted top position */
+            left: -400px; /* Initial left position outside the viewport */
+            animation: slideInRight 1s forwards; /* Animation for sliding in from the right */
+        }
+
+        .bsc-info {
+            background-color: rgba(255, 228, 196, 0.9); /* Bisque background specific to B.Sc. */
+            color: #8B4513; /* SaddleBrown text color specific to B.Sc. */
+            border: 2px solid #8B4513; /* Add border */
+            position: absolute; /* Position at bottom left */
+            bottom: 20px; /* Adjusted bottom position */
+            right: -400px; /* Initial right position outside the viewport */
+            animation: slideInLeft 1s forwards; /* Animation for sliding in from the left */
+        }
+
+        .larger-heading {
+            font-size: 40px;
+            margin: 5px 0;
+            color: #003366; /* Dark blue text color */
+        }
+
+        .larger-subheading {
+            font-size: 25px;
+            margin: 3px 0;
+            color: #003366; /* Dark blue text color */
+        }
+
+        .minimized-image {
+            width: 200px; /* Adjust the width as needed */
+            height: auto; /* Keeps the aspect ratio */
+            position: absolute; /* Allows positioning with top and left */
+            top: 7px; /* Adjust the top position */
+            left: 8px; /* Adjust the left position */
+        }
+
+        .menu {
+            text-align: center; /* Center-align the menu */
+            margin-top: 20px; /* Adjusted margin */
+        }
+
+        .menu a {
+            margin: 0 10px; /* Adjusted margin */
+            color: black; /* Set text color to black */
+            font-size: 25px; /* Set font size for menu items */
+            text-decoration: none; /* Remove underline from links */
+            padding: 10px 20px; /* Add padding for better spacing */
+            background-color: #d88ecc; /* Set background color for links */
+            border-radius: 5px; /* Add border radius for rounded corners */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add box shadow */
+            transition: background-color 0.3s, transform 0.3s; /* Add transition effect */
+        }
+
+        .menu a:hover {
+            background-color: #c77fdb; /* Darken background color on hover */
+            transform: scale(1.05); /* Increase size on hover */
+        }
+
+        /* Special style for the Rules button */
+        .menu a.rules {
+            background-color: #d88ecc; /* Set background color for Rules button */
+            color: #003366; /* Set text color for Rules button */
+            font-weight: bold; /* Make text bold 
+            border: 2px solid #003366;
+            text-align: left; /* Add border for Rules button */
+        }
+
+        .menu a.rules:hover {
+            background-color: #e6b800; /* Darken background color on hover */
+        }
+
+        /* Animation for sliding in from the right */
+        @keyframes slideInRight {
+            to {
+                left: 20px; /* Adjusted left position */
+            }
+        }
+
+        /* Animation for sliding in from the left */
+        @keyframes slideInLeft {
+            to {
+                right: 20px; /* Adjusted right position */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="college-info">
+    <img src="./images/LOGODB copy.png" alt="College Logo" class="minimized-image">
+    <h1 class="larger-heading">Don Bosco Degree College</h1>
+    <h4 class="larger-subheading">[AFFILIATED TO DAVANGERE UNIVERSITY & RECOGNIZED BY GOVT OF KARNATAKA]</h4>
+    <h4 class="larger-subheading">CHITRADURGA- 577501</h4>
+</div>
+<div class="menu">
+    <a href="rules.html" class="rules">Rules</a> 
+    <a href="connection.html">Connection</a>
+    <a href="Missing.html">Missing</a>
+    <a href="Jumbled Words.html">Jumbled Words</a>
+ <!-- Added Rules button with special styling -->
+</div>
+<div class="info-container">
+    <div class="info-box bca-info" id="bcaDepartment">
+        <h1>BCA Department</h1>
+        <p>The BCA Department at Don Bosco Degree College is dedicated to providing quality education in computer applications. Our curriculum is designed to equip students with the latest technological skills and knowledge necessary to excel in the IT industry.</p>
+    </div>
+    
+    <div class="info-box bsc-info">
+        <h1>B.Sc. Department</h1>
+        <p>The B.Sc. Department offers a robust curriculum in various science disciplines. Our aim is to foster a deep understanding of scientific principles and develop practical skills that prepare students for advanced studies and careers in scientific research and industry.</p>
+    </div>
+</div>
+
+<script>
+    // JavaScript code for triggering the sliding animation
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("bcaDepartment").style.animationName = "slideInRight";
+    });
+</script>
+
+</body>
+</html>
